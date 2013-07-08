@@ -15,13 +15,16 @@
  */
 package junitdemo
 
-import org.junit.Test
-import static org.junit.Assert.assertEquals
+import static org.junit.Assert.*
 
-class JUnitDemoGroovyTest {
+import org.junit.Test
+
+class JUnitDemoGroovyTest
+{
 
     @Test
-    void JUnitAssertion() {
+    void JUnitAssertion()
+    {
         def expected = 3
         def actual = 1 + 2
         assertEquals(expected, actual)

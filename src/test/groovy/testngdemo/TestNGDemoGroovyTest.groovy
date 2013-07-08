@@ -15,10 +15,12 @@
  */
 package testngdemo;
 
-import static org.testng.Assert.*;
-import org.testng.annotations.Test;
+import static org.testng.Assert.*
 
-class TestNGDemoGroovyTest {
+import org.testng.annotations.Test
+
+class TestNGDemoGroovyTest
+{
 
     @Test
     // NG !! def xxx() => public Object xxx(), so, TestNG can't recognize it!! :(

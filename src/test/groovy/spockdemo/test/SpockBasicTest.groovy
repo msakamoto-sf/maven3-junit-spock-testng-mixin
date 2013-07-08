@@ -15,20 +15,21 @@
  */
 package spockdemo.test
 
-class SpockBasicTest extends spock.lang.Specification {
+class SpockBasicTest extends spock.lang.Specification
+{
 
-  def "Spock class name suffix is 'Test'."() {
-    setup:
-    def str = 'Spock class name suffix is'
+    def "Spock class name suffix is 'Test'."()
+    {
+        setup:
+        def str = 'Spock class name suffix is'
 
-    when:
-    str += ' "Test".'
+        when:
+        str += ' "Test".'
 
-    then:
-    str == 'Spock class name suffix is "Test".'
+        then:
+        str == 'Spock class name suffix is "Test".'
 
-    cleanup:
-    println str
-  }
-
+        cleanup:
+        println str
+    }
 }

@@ -17,39 +17,42 @@ package spockdemo.spec
 
 class SpockBasicSpec extends spock.lang.Specification {
 
-  def setup() { println 'fixture method(setup)' }
-  def cleanup() { println 'fixture method(cleanup)' }
-  def setupSpec() { println 'fixture method(setupSpec)' }
-  def cleanupSpec() { println 'fixture method(cleanupSpec)' }
+    def setup() { println 'fixture method(setup)' }
+    def cleanup() { println 'fixture method(cleanup)' }
+    def setupSpec() { println 'fixture method(setupSpec)' }
+    def cleanupSpec() { println 'fixture method(cleanupSpec)' }
 
-  def "Spock's basic1"() {
-    setup:
-    def map = [:]
-    map['abc'] = 100
+    def "Spock's basic1"()
+    {
+        setup:
+        def map = [:]
+        map['abc'] = 100
 
-    when:
-    map['def'] = 200
+        when:
+        map['def'] = 200
 
-    then:
-    match_helper1(map)
+        then:
+        match_helper1(map)
 
-    cleanup:
-    map.clear()
-    println 'cleanupped.'
-  }
+        cleanup:
+        map.clear()
+        println 'cleanupped.'
+    }
 
-  def "Spock's basic2"() {
-    expect:
-    name.size() == length
+    def "Spock's basic2"()
+    {
+        expect:
+        name.size() == length
 
-    where:
-    name     | length
-    "Spock"  | 5
-    "Kirk"   | 4
-    "Scotty" | 6
-  }
+        where:
+        name     | length
+        "Spock"  | 5
+        "Kirk"   | 4
+        "Scotty" | 6
+    }
 
-  void match_helper1(map) {
-    assert map['abc'] + map['def'] == 300
-  }
+    void match_helper1(map)
+    {
+        assert map['abc'] + map['def'] == 300
+    }
 }

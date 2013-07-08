@@ -36,42 +36,45 @@ public class TestNGDemoJavaTest {
     public void beforeSuite() {
         System.out.println(Thread.currentThread() + " - beforeSuite()");
     }
+
     @AfterSuite
     public void afterSuite() {
         System.out.println(Thread.currentThread() + " - afterSuite()");
     }
+
     @BeforeTest
     public void beforeTest() {
         System.out.println(Thread.currentThread() + " - beforeTest()");
     }
+
     @AfterTest
     public void afterTest() {
         System.out.println(Thread.currentThread() + " - afterTest()");
     }
+
     @BeforeClass
     public void beforeClass() {
         System.out.println(Thread.currentThread() + " - beforeClass()");
     }
+
     @AfterClass
     public void afterClass() {
         System.out.println(Thread.currentThread() + " - afterClass()");
     }
+
     @BeforeMethod
     public void beforeMethod() {
         System.out.println(Thread.currentThread() + " - beforeMethod()");
     }
+
     @AfterMethod
     public void afterMethod() {
         System.out.println(Thread.currentThread() + " - afterMethod()");
     }
 
-    @DataProvider(name="dp1")
+    @DataProvider(name = "dp1")
     public Object[][] dp1() {
-        return new Object[][] {
-                {1, 2, 3},
-                {4, 5, 9},
-                {6, 7, 13}
-                };
+        return new Object[][] { { 1, 2, 3 }, { 4, 5, 9 }, { 6, 7, 13 } };
     }
 
     int testadd(int a, int b) {
@@ -97,6 +100,5 @@ public class TestNGDemoJavaTest {
         System.out.println(mylist);
         assertEquals(3, mylist.size());
     }
-
 
 }
