@@ -19,7 +19,7 @@ Play Guide
 1. Newer-Solution (2013 version)
   * `mvn (-f pom.xml) test`
 2. Another-Solution (2011 - 2012 version)
-  * `mvn -f pom-another-solution.xml`
+  * `mvn -f pom-another-solution.xml test`
 
 References
 ----
