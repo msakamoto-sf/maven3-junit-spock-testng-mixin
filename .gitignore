@@ -9,3 +9,6 @@
 .settings/*
 target/*
 test-output/*
+
+# auto ganerated file by http://marketplace.eclipse.org/content/github-flavored-markdown-viewer-plugin-eclipse
+.README.md.html
