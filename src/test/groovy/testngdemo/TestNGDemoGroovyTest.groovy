@@ -17,10 +17,59 @@ package testngdemo;
 
 import static org.testng.Assert.*
 
+import org.testng.annotations.AfterClass
+import org.testng.annotations.AfterMethod
+import org.testng.annotations.AfterSuite
+import org.testng.annotations.AfterTest
+import org.testng.annotations.BeforeClass
+import org.testng.annotations.BeforeMethod
+import org.testng.annotations.BeforeSuite
+import org.testng.annotations.BeforeTest
+import org.testng.annotations.DataProvider
 import org.testng.annotations.Test
 
 class TestNGDemoGroovyTest
 {
+    @BeforeSuite
+    void beforeSuite()
+    {
+        println("beforeSuite() --" + Thread.currentThread())
+    }
+    @AfterSuite
+    void afterSuite()
+    {
+        println("afterSuite() --" + Thread.currentThread())
+    }
+    @BeforeTest
+    void beforeTest()
+    {
+        println("beforeTest() --" + Thread.currentThread())
+    }
+    @AfterTest
+    void afterTest()
+    {
+        println("afterTest() --" + Thread.currentThread())
+    }
+    @BeforeClass
+    void beforeClass()
+    {
+        println("beforeClass() --" + Thread.currentThread())
+    }
+    @AfterClass
+    void afterClass()
+    {
+        println("afterClass() --" + Thread.currentThread())
+    }
+    @BeforeMethod
+    void beforeMethod()
+    {
+        println("beforeMethod() --" + Thread.currentThread())
+    }
+    @AfterMethod
+    void afterMethod()
+    {
+        println("afterMethod() --" + Thread.currentThread())
+    }
 
     @Test
     // NG !! def xxx() => public Object xxx(), so, TestNG can't recognize it!! :(
@@ -31,4 +80,50 @@ class TestNGDemoGroovyTest
         assertEquals(list.size(), 3)
     }
 
+    @DataProvider(name="dp1")
+    Object[][] dp1() {
+        return [
+            [1, 2, 3] as Object[],
+            [4, 5, 9] as Object[],
+            [6, 7, 13] as Object[],
+        ] as Object[][]
+    }
+
+    int testadd(int a, int b) {
+        return a + b;
+    }
+
+    @Test(dataProvider = "dp1")
+    void verifyAddFunc(int a, int b, int expected) {
+        assertEquals(testadd(a, b), expected);
+    }
+
+    @DataProvider(name="dp2")
+    Object[][] dp2() {
+        return [
+            [1, 2, 3],
+            [4, 5, 9],
+            [6, 7, 13]
+            ]
+    }
+
+    @Test(dataProvider = "dp2")
+    void verifyAddFunc2(int a, int b, int expected) {
+        assertEquals(testadd(a, b), expected);
+    }
+
+    @DataProvider(name="dp3")
+    Object[][] dp3() {
+        return [
+            ["", "", 0],
+            ["a", "", 1],
+            ["", "a", 1],
+            ["a", "b", 2],
+            ]
+    }
+
+    @Test(dataProvider = "dp3")
+    void dataproviderSample3(String a, String b, int expected) {
+        assertEquals((a + b).length(), expected)
+    }
 }
