@@ -7,22 +7,28 @@ For Gradle users, see [msakamoto-sf/gradle-junit-spock-testng-mixin](https://git
 
 mvn -version:
 ```
-Apache Maven 3.0.5 (r01de14724cdef164cd33c7c8c2fe155faf9602da; 2013-02-19 22:51:28+0900)
-Java version: 1.7.0_25, vendor: Oracle Corporation
-Default locale: ja_JP, platform encoding: MS932
-OS name: "windows 7", version: "6.1", arch: "amd64", family: "windows"
+Apache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-11T01:41:47+09:00)
+Maven home: /home/msakamoto/devtools/apache-maven-3.3.9
+Java version: 1.8.0_77, vendor: Oracle Corporation
+Java home: /opt/jdk1.8.0_77/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "3.10.0-327.13.1.el7.x86_64", arch: "amd64", family: "unix"
 ```
 
 Play Guide
 ----
 
-1. Newer-Solution (2013 version)
+1. Newer-Solution (2016 version)
   * `mvn (-f pom.xml) test`
 2. Another-Solution (2011 - 2012 version)
   * `mvn -f pom-another-solution.xml test`
 
 References
 ----
+
+More-Newer-Solution (2016 version):
+
++ change Groovy compile solution from GMaven to up-Groovy Eclipse Maven plugin ( https://github.com/groovy/groovy-eclipse/wiki/Groovy-Eclipse-Maven-plugin )
 
 Newer-Solution (2013 version):
 
