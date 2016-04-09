@@ -3,6 +3,8 @@
 .classpath
 .settings
 bin
+# Eclipse TestNG plugin
+test-output
 
 # ignore netbeans related file/dir.
 nbproject
