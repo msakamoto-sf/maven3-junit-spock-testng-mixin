@@ -1,14 +1,32 @@
-**/*.class
+# ignore eclipse related file/dir.
+.project
+.classpath
+.settings
+bin
 
-# Package Files #
+# ignore netbeans related file/dir.
+nbproject
+
+# ignore windows system file/dir.
+Thumbs.db
+.DS_Store
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# ignore output file/dir.
+*.class
 *.jar
 *.war
 *.ear
+build
+target
 
-# Directories #
-.settings/*
-target/*
-test-output/*
+# ignore misc backups.
+*.swp
+*.bak
 
-# auto ganerated file by http://marketplace.eclipse.org/content/github-flavored-markdown-viewer-plugin-eclipse
-.README.md.html
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+*.log
